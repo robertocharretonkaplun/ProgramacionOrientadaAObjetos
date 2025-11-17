@@ -1,47 +1,27 @@
-#include <iostream>
-using namespace std;
-
-int CalcularDanio(int base, bool crit) {
-  if (crit) {
-    return base * 2;  // Daño crítico
-  }
-  return base;
-}
+#include "Prerequisites.h"
+#include "Player.h"
 
 int main() {
-  int vidaEnemigo = 30;
-  int ataqueJugador = 5;
-  int turno = 1;
+  // ------------------------------
+//  Ejemplo usando la CLASE Player
+// ------------------------------
+  Player jugador("Roberto", 100, 5.5f);
+  jugador.PrintInfo();
 
-  cout << "=== Mini Combate en C++ ===\n";
-  cout << "El enemigo tiene " << vidaEnemigo << " puntos de vida.\n";
 
-  while (vidaEnemigo > 0) {
+  // ------------------------------
+  //  Ejemplo usando la STRUCT Vector3
+  // ------------------------------
+  Vector3 posicionInicial(10.0f, 2.5f, -4.0f);
+  posicionInicial.Print();
 
-    cout << "\nTurno #" << turno << endl;
+  // Cambio directo de valores (porque struct es pública por defecto)
+  posicionInicial.x = 20.0f;
+  posicionInicial.y = 3.0f;
+  posicionInicial.z = 0.0f;
 
-    int opcion;
-    cout << "Elige tu accion: (1) Golpe normal  (2) Golpe critico: ";
-    cin >> opcion;
+  std::cout << "Nueva posicion: ";
+  posicionInicial.Print();
 
-    if (opcion != 1 && opcion != 2) {
-      cout << "Opcion invalida. Pierdes el turno.\n";
-      turno++;
-      continue;
-    }
-
-    bool critico = (opcion == 2);
-    int danio = CalcularDanio(ataqueJugador, critico);
-
-    vidaEnemigo -= danio;
-
-    cout << "Atacaste e hiciste " << danio << " puntos de danio.\n";
-    cout << "Vida restante del enemigo: " << 
-      (vidaEnemigo > 0 ? vidaEnemigo : 0) << endl;
-
-    turno++;
-  }
-
-  cout << "\n¡Felicidades! Derrotaste al enemigo.\n";
   return 0;
 }
