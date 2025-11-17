@@ -130,6 +130,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\BankAccount.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Prerequisites.h" />
   </ItemGroup>

@@ -1,27 +1,16 @@
 #include "Prerequisites.h"
-#include "Player.h"
+#include "BankAccount.h"
 
 int main() {
-  // ------------------------------
-//  Ejemplo usando la CLASE Player
-// ------------------------------
-  Player jugador("Roberto", 100, 5.5f);
-  jugador.PrintInfo();
+  BankAccount a("Roberto", "CTA-001", 1000.0);
+  BankAccount b("Ana", "CTA-002", 500.0);
 
+  a.Deposit(250.0);        // Roberto recibe dinero
+  a.Withdraw(100.0);       // Paga algo
+  a.TransferTo(b, 300.0);  // Le transfiere a Ana
 
-  // ------------------------------
-  //  Ejemplo usando la STRUCT Vector3
-  // ------------------------------
-  Vector3 posicionInicial(10.0f, 2.5f, -4.0f);
-  posicionInicial.Print();
-
-  // Cambio directo de valores (porque struct es pública por defecto)
-  posicionInicial.x = 20.0f;
-  posicionInicial.y = 3.0f;
-  posicionInicial.z = 0.0f;
-
-  std::cout << "Nueva posicion: ";
-  posicionInicial.Print();
+  a.PrintSummary();
+  b.PrintSummary();
 
   return 0;
 }

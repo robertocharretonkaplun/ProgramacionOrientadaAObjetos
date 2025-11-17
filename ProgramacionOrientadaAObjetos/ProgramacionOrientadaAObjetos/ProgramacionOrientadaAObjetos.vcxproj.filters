@@ -29,5 +29,8 @@
     <ClInclude Include="include\Player.h">
       <Filter>Resource Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="include\BankAccount.h">
+      <Filter>Resource Files\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
