@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include "Prerequisites.h"
 
 int CalcularDanio(int base, bool crit) {
   if (crit) {
@@ -13,19 +12,19 @@ int main() {
   int ataqueJugador = 5;
   int turno = 1;
 
-  cout << "=== Mini Combate en C++ ===\n";
-  cout << "El enemigo tiene " << vidaEnemigo << " puntos de vida.\n";
+  std::cout << "=== Mini Combate en C++ ===\n";
+  std::cout << "El enemigo tiene " << vidaEnemigo << " puntos de vida.\n";
 
   while (vidaEnemigo > 0) {
 
-    cout << "\nTurno #" << turno << endl;
+    std::cout << "\nTurno #" << turno << std::endl;
 
     int opcion;
-    cout << "Elige tu accion: (1) Golpe normal  (2) Golpe critico: ";
-    cin >> opcion;
+    std::cout << "Elige tu accion: (1) Golpe normal  (2) Golpe critico: ";
+    std::cin >> opcion;
 
     if (opcion != 1 && opcion != 2) {
-      cout << "Opcion invalida. Pierdes el turno.\n";
+      std::cout << "Opcion invalida. Pierdes el turno.\n";
       turno++;
       continue;
     }
@@ -35,13 +34,12 @@ int main() {
 
     vidaEnemigo -= danio;
 
-    cout << "Atacaste e hiciste " << danio << " puntos de danio.\n";
-    cout << "Vida restante del enemigo: " << 
-      (vidaEnemigo > 0 ? vidaEnemigo : 0) << endl;
+    std::cout << "Atacaste e hiciste " << danio << " puntos de danio.\n";
+    std::cout << "Vida restante del enemigo: " << (vidaEnemigo > 0 ? vidaEnemigo : 0) << std::endl;
 
     turno++;
   }
 
-  cout << "\n¡Felicidades! Derrotaste al enemigo.\n";
+  std::cout << "\n¡Felicidades! Derrotaste al enemigo.\n";
   return 0;
 }

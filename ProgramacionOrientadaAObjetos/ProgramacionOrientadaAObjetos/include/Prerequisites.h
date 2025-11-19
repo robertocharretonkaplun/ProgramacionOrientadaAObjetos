@@ -1,12 +1,11 @@
 #pragma once
 // Librerias STD
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <windows.h>
-#include <xnamath.h>
 #include <thread>
-
 // Third Party Libraries
 
 // MACROS
