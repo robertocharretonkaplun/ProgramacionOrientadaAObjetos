@@ -30,6 +30,7 @@
 #include <mutex>
 #include <chrono>
 #include <ctime>
+#include <stdexcept>
 
 namespace EngineLog
 {

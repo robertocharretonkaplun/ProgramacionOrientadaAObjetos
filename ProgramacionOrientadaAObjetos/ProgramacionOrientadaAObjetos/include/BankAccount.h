@@ -1,7 +1,5 @@
 #pragma once
-#include <string>
-#include <stdexcept>
-#include <iostream>
+#include "Prerequisites.h"
 
 /**
  * @brief Representa una cuenta bancaria básica.
@@ -24,8 +22,8 @@ public:
    * @throws std::invalid_argument Si el saldo inicial es negativo.
    */
   BankAccount(const std::string& owner,
-    const std::string& id,
-    double initialBalance = 0.0)
+              const std::string& id,
+              double initialBalance = 0.0)
     : ownerName(owner), accountId(id), balance(initialBalance)
   {
     if (initialBalance < 0.0) {
@@ -64,7 +62,10 @@ public:
    */
   void Deposit(double amount) {
     if (amount <= 0.0) {
-      throw std::invalid_argument("El deposito debe ser mayor que 0.");
+      LOG_INFO("BankAccount", "Deposit", 
+      ("Intento de deposito con cantidad no valida: " + std::to_string(amount)).c_str());
+			//std::cout << "El deposito debe ser mayor que 0." << std::endl;
+      //throw std::invalid_argument("El deposito debe ser mayor que 0.");
     }
     balance += amount;
   }
@@ -77,7 +78,10 @@ public:
    */
   bool Withdraw(double amount) {
     if (amount <= 0.0) {
-      throw std::invalid_argument("El retiro debe ser mayor que 0.");
+      LOG_INFO("BankAccount", "Withdraw", 
+				("Intento de retiro con cantidad no valida: " + std::to_string(amount)).c_str());
+			std::cout << "El retiro debe ser mayor que 0." << std::endl;
+      //throw std::invalid_argument("El retiro debe ser mayor que 0.");
     }
 
     if (amount > balance) {
@@ -99,17 +103,23 @@ public:
    */
   bool TransferTo(BankAccount& other, double amount) {
     if (amount <= 0.0) {
-      throw std::invalid_argument("La transferencia debe ser mayor que 0.");
+			LOG_INFO("BankAccount", "TransferTo",
+				("Intento de transferencia con cantidad no valida: " + std::to_string(amount)).c_str());
+			std::cout << "La transferencia debe ser mayor que 0." << std::endl;
+      //throw std::invalid_argument("La transferencia debe ser mayor que 0.");
     }
 
     if (!Withdraw(amount)) {
+			LOG_INFO("BankAccount", "TransferTo",
+				("No se pudo completar la transferencia de " + std::to_string(amount) +
+					" desde la cuenta " + accountId + " a la cuenta " + other.accountId +
+					" por saldo insuficiente.").c_str());
+			std::cout << "Saldo insuficiente para la transferencia." << std::endl;
       return false; // no se pudo retirar de la cuenta origen
     }
-
     other.Deposit(amount);
     return true;
   }
-
   /**
    * @brief Imprime un resumen simple de la cuenta.
    */
