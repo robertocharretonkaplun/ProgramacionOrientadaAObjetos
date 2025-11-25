@@ -16,6 +16,9 @@
     <Filter Include="Resource Files\Classes">
       <UniqueIdentifier>{fbfa3414-0bc7-4f97-8afa-8e0410dfd066}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Classes\Encapsulamiento">
+      <UniqueIdentifier>{74df8f57-e172-4df0-8204-b5eb08be0d21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -34,6 +37,12 @@
     </ClInclude>
     <ClInclude Include="include\Bank.h">
       <Filter>Resource Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\User.h">
+      <Filter>Resource Files\Classes\Encapsulamiento</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Persona.h">
+      <Filter>Resource Files\Classes\Encapsulamiento</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
