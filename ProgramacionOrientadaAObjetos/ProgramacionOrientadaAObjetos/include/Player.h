@@ -20,9 +20,7 @@ public:
     Player(const std::string& n, int h, float s)
         : name(n), health(h), speed(s) {}
 
-    /**
-     * @brief Muestra la información del jugador.
-     */
+    
     void PrintInfo() const {
         std::cout << "Player: " << name
                   << " | Health: " << health
