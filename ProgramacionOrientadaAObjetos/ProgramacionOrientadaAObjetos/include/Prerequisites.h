@@ -31,6 +31,7 @@
 #include <chrono>
 #include <ctime>
 #include <stdexcept>
+#include <cstring>
 
 namespace EngineLog
 {

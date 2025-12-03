@@ -132,6 +132,8 @@
   <ItemGroup>
     <ClInclude Include="include\Bank.h" />
     <ClInclude Include="include\BankAccount.h" />
+    <ClInclude Include="include\Cadena.h" />
+    <ClInclude Include="include\Enemy.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Prerequisites.h" />
     <ClInclude Include="include\User.h" />
