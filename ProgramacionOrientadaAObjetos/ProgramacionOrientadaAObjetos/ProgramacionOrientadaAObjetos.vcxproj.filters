@@ -16,6 +16,12 @@
     <Filter Include="Resource Files\Classes">
       <UniqueIdentifier>{fbfa3414-0bc7-4f97-8afa-8e0410dfd066}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Composicion">
+      <UniqueIdentifier>{ce0665c5-a6a6-4089-a2ce-cc01c203f66c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Agregacion">
+      <UniqueIdentifier>{8424f81a-8623-4c3b-adf0-5182d93fc5c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -46,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="include\Cadena.h">
       <Filter>Resource Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Motor.h">
+      <Filter>Resource Files\Composicion</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Conductor.h">
+      <Filter>Resource Files\Agregacion</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mochila.h">
+      <Filter>Resource Files\Composicion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

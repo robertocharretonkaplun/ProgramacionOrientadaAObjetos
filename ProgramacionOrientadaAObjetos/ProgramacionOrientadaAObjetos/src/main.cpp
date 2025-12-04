@@ -1,20 +1,26 @@
 #include "Prerequisites.h"
-#include "Cadena.h"
+#include "Motor.h"
+#include "Conductor.h"
 
 
 int main() {
-    Cadena nombre("Jugador1");
-  
-    std::cout << "Nombre: " << nombre.cstr() << "\n";
-    std::cout << "Longitud: " << nombre.length() << "\n";
-  
-    // Al salir de main, ~Cadena() libera la memoria.
-  
-    Cadena mensaje("Hola");
-    std::cout << mensaje.cstr() << "\n";
-  
-    mensaje.set("Bienvenido al juego");
-    std::cout << mensaje.cstr() << "\n";
-    return 0;
+  Conductor juan("Juan Perez");   // Vive independientemente
+  Conductor ana("Ana Lopez");
+
+  CocheConductor cocheA;
+  CocheConductor cocheB;
+
+  cocheA.SetConductor(&juan);     // cocheA usa a Juan
+  cocheB.SetConductor(&ana);      // cocheB usa a Ana
+
+  cocheA.ImprimirConductor();
+  cocheB.ImprimirConductor();
+
+  // Incluso podrías reasignar
+  cocheA.SetConductor(&ana);      // Ahora cocheA usa a Ana
+  cocheA.ImprimirConductor();
+
+  // Cuando los coches se destruyen (al final de main),
+  // juan y ana SIGUEN siendo válidos hasta el final del programa.
   return 0;
 }
