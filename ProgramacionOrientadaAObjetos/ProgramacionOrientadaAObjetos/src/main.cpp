@@ -1,11 +1,34 @@
 #include "Prerequisites.h"
-#include "Perro.h"
+#include "Guerrero.h"
+#include "Mago.h"
+#include "Arquero.h"
+
 
 int main() {
-  Perro p("Firulais", 3);
+  Guerrero g("Arthos");
+  Mago m("Elandra");
+  Arquero a("Sylvar");
 
-  p.Comer();    // Método heredado
-  p.Dormir();   // Método heredado
-  p.Ladrar();   // Método propio de Perro
+  g.MostrarInfo();
+  g.GolpeFuerte();
+  g.Atacar();
+
+  std::cout << "\n";
+
+  m.MostrarInfo();
+  m.LanzarHechizo();
+  m.Atacar();
+
+  std::cout << "\n";
+
+  a.MostrarInfo();
+  a.DisparoPreciso();
+  a.Atacar();
+
+  std::cout << "\nSimulación de daño:\n";
+  g.RecibirDaño(30);
+  m.RecibirDaño(50);
+  a.RecibirDaño(20);
+
   return 0;
 }
