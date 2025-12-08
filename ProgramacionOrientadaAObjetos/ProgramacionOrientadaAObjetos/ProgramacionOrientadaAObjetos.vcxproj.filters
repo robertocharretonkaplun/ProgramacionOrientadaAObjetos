@@ -22,6 +22,15 @@
     <Filter Include="Resource Files\Agregacion">
       <UniqueIdentifier>{8424f81a-8623-4c3b-adf0-5182d93fc5c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Herencias">
+      <UniqueIdentifier>{7a2dda61-a723-45db-bbf9-bcd2ac80dd2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Herencias\EjemploSimple">
+      <UniqueIdentifier>{6083b187-ef08-45a3-acd6-14301486a16d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Herencias\RPG">
+      <UniqueIdentifier>{5b1a7a45-7748-43b5-97da-c91f229432e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -61,6 +70,21 @@
     </ClInclude>
     <ClInclude Include="include\Mochila.h">
       <Filter>Resource Files\Composicion</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Animal.h">
+      <Filter>Resource Files\Herencias\EjemploSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Perro.h">
+      <Filter>Resource Files\Herencias\EjemploSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Personaje.h">
+      <Filter>Resource Files\Herencias\RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Guerrero.h">
+      <Filter>Resource Files\Herencias\RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mago.h">
+      <Filter>Resource Files\Herencias\RPG</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

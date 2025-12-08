@@ -1,26 +1,11 @@
 #include "Prerequisites.h"
-#include "Motor.h"
-#include "Conductor.h"
-
+#include "Perro.h"
 
 int main() {
-  Conductor juan("Juan Perez");   // Vive independientemente
-  Conductor ana("Ana Lopez");
+  Perro p("Firulais", 3);
 
-  CocheConductor cocheA;
-  CocheConductor cocheB;
-
-  cocheA.SetConductor(&juan);     // cocheA usa a Juan
-  cocheB.SetConductor(&ana);      // cocheB usa a Ana
-
-  cocheA.ImprimirConductor();
-  cocheB.ImprimirConductor();
-
-  // Incluso podrías reasignar
-  cocheA.SetConductor(&ana);      // Ahora cocheA usa a Ana
-  cocheA.ImprimirConductor();
-
-  // Cuando los coches se destruyen (al final de main),
-  // juan y ana SIGUEN siendo válidos hasta el final del programa.
+  p.Comer();    // Método heredado
+  p.Dormir();   // Método heredado
+  p.Ladrar();   // Método propio de Perro
   return 0;
 }
