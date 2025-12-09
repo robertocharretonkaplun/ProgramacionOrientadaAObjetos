@@ -31,6 +31,9 @@
     <Filter Include="Resource Files\Herencias\RPG">
       <UniqueIdentifier>{5b1a7a45-7748-43b5-97da-c91f229432e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Polimorfismo">
+      <UniqueIdentifier>{246544ce-bdf3-4565-b81e-a6d81e0c97bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -85,6 +88,21 @@
     </ClInclude>
     <ClInclude Include="include\Mago.h">
       <Filter>Resource Files\Herencias\RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Arquero.h">
+      <Filter>Resource Files\Herencias\RPG</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Figura.h">
+      <Filter>Resource Files\Polimorfismo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Circulo.h">
+      <Filter>Resource Files\Polimorfismo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Cuadrado.h">
+      <Filter>Resource Files\Polimorfismo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Triangulo.h">
+      <Filter>Resource Files\Polimorfismo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

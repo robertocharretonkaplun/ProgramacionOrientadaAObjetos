@@ -1,34 +1,20 @@
 #include "Prerequisites.h"
-#include "Guerrero.h"
-#include "Mago.h"
-#include "Arquero.h"
+#include "Figura.h"
+#include "Cuadrado.h"
+#include "Triangulo.h"
+#include "Circulo.h"
 
 
 int main() {
-  Guerrero g("Arthos");
-  Mago m("Elandra");
-  Arquero a("Sylvar");
+  std::vector<std::unique_ptr<Figura>> figuras;
 
-  g.MostrarInfo();
-  g.GolpeFuerte();
-  g.Atacar();
+  figuras.push_back(std::make_unique<Cuadrado>(5));
+  figuras.push_back(std::make_unique<Triangulo>(4, 3));
+  figuras.push_back(std::make_unique<Circulo>(10));
 
-  std::cout << "\n";
-
-  m.MostrarInfo();
-  m.LanzarHechizo();
-  m.Atacar();
-
-  std::cout << "\n";
-
-  a.MostrarInfo();
-  a.DisparoPreciso();
-  a.Atacar();
-
-  std::cout << "\nSimulación de daño:\n";
-  g.RecibirDaño(30);
-  m.RecibirDaño(50);
-  a.RecibirDaño(20);
+  for (const auto& f : figuras) {
+    std::cout << "Area: " << f->Area() << "\n";
+  }
 
   return 0;
 }
