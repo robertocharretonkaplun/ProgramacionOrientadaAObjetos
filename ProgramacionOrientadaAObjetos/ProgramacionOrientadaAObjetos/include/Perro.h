@@ -23,3 +23,26 @@ public:
 //
 //  return 0;
 //}
+//
+//int main() {
+//	Perro* p = new Perro("Firulais", 3);
+//
+//	// Vector de Animales
+//	std::vector<Animal*> animales;
+//
+//	animales.push_back(new Perro("Memo", 15));
+//	animales.push_back(new Perro("Luna", 5));
+//	animales.push_back(p);
+//
+//	for (const auto& animal : animales) {
+//		animal->Comer();
+//		animal->Dormir();
+//	}
+//
+//	// Liberar memoria
+//	for (const auto& animal : animales) {
+//		delete animal;
+//	}
+//
+//	return 0;
+//}

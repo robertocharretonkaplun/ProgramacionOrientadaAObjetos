@@ -19,5 +19,21 @@ public:
   void Dormir() const {
     std::cout << nombre << " esta durmiendo.\n";
   }
+
+  void init() {
+
+  }
+
+  void update() {
+	}
+
+  void render() {
+
+  }
+
+  void destroy() {
+
+  }
+
 };
 

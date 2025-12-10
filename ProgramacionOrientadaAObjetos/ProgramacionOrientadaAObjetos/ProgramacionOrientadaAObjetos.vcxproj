@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Animal.h" />
+    <ClInclude Include="include\Arquero.h" />
     <ClInclude Include="include\Bank.h" />
     <ClInclude Include="include\BankAccount.h" />
     <ClInclude Include="include\Cadena.h" />
