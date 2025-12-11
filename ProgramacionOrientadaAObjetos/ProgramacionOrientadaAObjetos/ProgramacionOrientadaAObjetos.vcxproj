@@ -151,6 +151,10 @@
     <ClInclude Include="include\Triangulo.h" />
     <ClInclude Include="include\User.h" />
     <ClInclude Include="include\Vector2D.h" />
+    <ClInclude Include="include\VirtualRPG\Arquero.h" />
+    <ClInclude Include="include\VirtualRPG\Guerrero.h" />
+    <ClInclude Include="include\VirtualRPG\Mago.h" />
+    <ClInclude Include="include\VirtualRPG\Personaje.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
