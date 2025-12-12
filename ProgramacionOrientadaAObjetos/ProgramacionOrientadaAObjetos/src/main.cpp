@@ -43,6 +43,16 @@ int main() {
 //  figuras.push_back(std::make_unique<Circulo>(10));
 //
 //  for (const auto& f : figuras) {
+//		// Detectar el tipo de dato especifico usando RTTI
+//    if (dynamic_cast<Cuadrado*>(f.get())) {
+//      std::cout << "Figura: Cuadrado\n";
+//    } else if (dynamic_cast<Triangulo*>(f.get())) {
+//      std::cout << "Figura: Triangulo\n";
+//    } else if (dynamic_cast<Circulo*>(f.get())) {
+//      std::cout << "Figura: Circulo\n";
+//    } else {
+//      std::cout << "Figura: Desconocida\n";
+//		}
 //    std::cout << "Area: " << f->Area() << "\n";
 //  }
 //
