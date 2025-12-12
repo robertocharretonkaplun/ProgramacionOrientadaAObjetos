@@ -1,60 +1,28 @@
 #include "Prerequisites.h"
-#include "VirtualRPG/Personaje.h"
-#include "VirtualRPG/Guerrero.h"
-#include "VirtualRPG/Mago.h"
-#include "VirtualRPG/Arquero.h"
+#include "PuntoDeVenta\Store.h"
 
 int main() {
-  // Vector polimórfico que almacena diferentes tipos de personajes
-  std::vector<std::unique_ptr<Personaje>> personajes;
+	Store store;
+	store.LoadInventory("inventory.json");
 
-  // Creación de personajes usando std::make_unique (propiedad exclusiva)
-  personajes.push_back(std::make_unique<Guerrero>("Arthas"));
-  personajes.push_back(std::make_unique<Mago>("Merlín"));
-  personajes.push_back(std::make_unique<Arquero>("Legolas"));
+	int option = -1;
+	while (option != 0) {
+		std::cout << "\n=== MENU TIENDA ===\n";
+		std::cout << "1) Ver inventario\n";
+		std::cout << "2) Registrar venta\n";
+		std::cout << "3) Alta de producto\n";
+		std::cout << "0) Salir\n";
+		std::cout << "Opcion: ";
+		std::cin >> option;
 
-  std::cout << "=== Clases de los personajes ===\n";
-  for (const auto& p : personajes) {
-    p->MostrarClase();   // Llamada polimórfica
-  }
+		switch (option) {
+		case 1: store.ShowInventory(); break;
+		case 2: store.MakeSale();      break;
+		case 3: store.AddProductInteractive(); break;
+		case 0: std::cout << "Saliendo...\n"; break;
+		default: std::cout << "Opcion invalida.\n"; break;
+		}
+	}
 
-  std::cout << "\n=== Ataques de los personajes ===\n";
-  for (const auto& p : personajes) {
-    p->Atacar();         // Llamada polimórfica
-  }
-
-  // No es necesario llamar delete: unique_ptr libera automáticamente.
-  return 0;
+	return 0;
 }
-
-
-
-//#include "Figura.h"
-//#include "Cuadrado.h"
-//#include "Triangulo.h"
-//#include "Circulo.h"
-//
-//
-//int main() {
-//  std::vector<std::unique_ptr<Figura>> figuras;
-//
-//  figuras.push_back(std::make_unique<Cuadrado>(5));
-//  figuras.push_back(std::make_unique<Triangulo>(4, 3));
-//  figuras.push_back(std::make_unique<Circulo>(10));
-//
-//  for (const auto& f : figuras) {
-//		// Detectar el tipo de dato especifico usando RTTI
-//    if (dynamic_cast<Cuadrado*>(f.get())) {
-//      std::cout << "Figura: Cuadrado\n";
-//    } else if (dynamic_cast<Triangulo*>(f.get())) {
-//      std::cout << "Figura: Triangulo\n";
-//    } else if (dynamic_cast<Circulo*>(f.get())) {
-//      std::cout << "Figura: Circulo\n";
-//    } else {
-//      std::cout << "Figura: Desconocida\n";
-//		}
-//    std::cout << "Area: " << f->Area() << "\n";
-//  }
-//
-//  return 0;
-//}

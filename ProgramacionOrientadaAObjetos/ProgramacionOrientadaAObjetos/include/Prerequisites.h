@@ -32,6 +32,9 @@
 #include <ctime>
 #include <stdexcept>
 #include <cstring>
+#include <iomanip>
+
+// Librerías de terceros
 
 namespace EngineLog
 {

@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Store.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Animal.h" />
@@ -148,6 +149,9 @@
     <ClInclude Include="include\Personaje.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\Prerequisites.h" />
+    <ClInclude Include="include\PuntoDeVenta\Inventory.h" />
+    <ClInclude Include="include\PuntoDeVenta\Product.h" />
+    <ClInclude Include="include\PuntoDeVenta\Store.h" />
     <ClInclude Include="include\Triangulo.h" />
     <ClInclude Include="include\User.h" />
     <ClInclude Include="include\Vector2D.h" />
@@ -155,6 +159,9 @@
     <ClInclude Include="include\VirtualRPG\Guerrero.h" />
     <ClInclude Include="include\VirtualRPG\Mago.h" />
     <ClInclude Include="include\VirtualRPG\Personaje.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\inventory.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
