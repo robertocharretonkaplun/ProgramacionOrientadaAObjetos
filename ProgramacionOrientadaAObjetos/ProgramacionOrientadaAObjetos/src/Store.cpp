@@ -2,6 +2,16 @@
 #include "ThirdParties\json.hpp"
 using nlohmann::json;
 
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
+  ProductDTO,
+  id,
+  name,
+  price,
+  stock,
+  type,
+  expirationDate
+)
+
 bool Store::LoadInventory(const std::string& filePath) {
   std::ifstream file(filePath);
   if (!file.is_open()) {
@@ -15,23 +25,23 @@ bool Store::LoadInventory(const std::string& filePath) {
   products_.clear();
 
   for (const auto& p : j["products"]) {
-    std::string id = p.at("id").get<std::string>();
-    std::string name = p.at("name").get<std::string>();
-    double price = p.at("price").get<double>();
-    int stock = p.at("stock").get<int>();
-    std::string type = p.at("type").get<std::string>();
+    ProductDTO dto = p.get<ProductDTO>();
 
-    std::string expiration;
-    if (p.contains("expirationDate")) {
-      expiration = p.at("expirationDate").get<std::string>();
-    }
+    auto prod = std::make_unique<Product>(
+      dto.id,
+      dto.name,
+      dto.price,
+      dto.stock,
+      dto.type,
+      dto.expirationDate
+    );
 
-    auto prod = std::make_unique<Product>(id, name, price, stock, type, expiration);
     products_.push_back(std::move(prod));
   }
 
-  std::cout << "Inventario cargado: " << products_.size()
-    << " productos.\n";
+  std::cout << "Inventario cargado: "
+    << products_.size() << " productos.\n";
+
   return true;
 }
 

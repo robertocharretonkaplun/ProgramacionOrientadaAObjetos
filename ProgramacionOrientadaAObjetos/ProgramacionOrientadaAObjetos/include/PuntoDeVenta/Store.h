@@ -11,6 +11,16 @@ struct TicketLine {
   double      lineTotal;
 };
 
+// Struct plano que coincide con el JSON
+struct ProductDTO {
+  std::string id;
+  std::string name;
+  double      price;
+  int         stock;
+  std::string type;
+  std::string expirationDate;
+};
+
 class Store {
 public:
   bool LoadInventory(const std::string& filePath);
