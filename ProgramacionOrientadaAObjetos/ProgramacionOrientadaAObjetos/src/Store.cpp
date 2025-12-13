@@ -1,6 +1,4 @@
 #include "PuntoDeVenta\Store.h"
-#include "ThirdParties\json.hpp"
-using nlohmann::json;
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
   ProductDTO,
@@ -155,7 +153,10 @@ void Store::AddProductInteractive() {
   auto prod = std::make_unique<Product>(id, name, price, stock, type, expiration);
   products_.push_back(std::move(prod));
 
-  std::cout << "Producto agregado.\n";
+  // Guardar inmediatamente el inventario actualizado
+  SaveInventory("inventory.json");
+
+  std::cout << "Producto agregado y guardado.\n";
 }
 
 void Store::SaveTicket(const std::vector<TicketLine>& lines,
@@ -189,4 +190,24 @@ void Store::SaveTicket(const std::vector<TicketLine>& lines,
   out << "\nTOTAL: " << total << "\n";
 
   std::cout << "Ticket guardado en: " << fileName << "\n";
+}
+
+void Store::SaveInventory(const std::string& filePath) const
+{
+  nlohmann::json j;
+  j["products"] = nlohmann::json::array();
+
+  for (const auto& up : products_) {
+    ProductDTO dto = up->ToDTO();
+    j["products"].push_back(dto);   // gracias a to_json(dto)
+  }
+
+  std::ofstream out(filePath);
+  if (!out.is_open()) {
+    std::cout << "No se pudo guardar el inventario.\n";
+    return;
+  }
+
+  out << j.dump(4);   // 4 = indentación bonita
+  std::cout << "Inventario guardado correctamente.\n";
 }

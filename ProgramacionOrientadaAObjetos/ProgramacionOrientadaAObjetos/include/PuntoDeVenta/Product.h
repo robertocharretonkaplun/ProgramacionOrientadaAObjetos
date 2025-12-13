@@ -33,6 +33,17 @@ public:
     return true;
   }
 
+  ProductDTO ToDTO() const {
+    return ProductDTO{
+        id_,
+        name_,
+        price_,
+        stock_,
+        type_,
+        expirationDate_
+    };
+  }
+
 public:
   std::string id_;
   std::string name_;

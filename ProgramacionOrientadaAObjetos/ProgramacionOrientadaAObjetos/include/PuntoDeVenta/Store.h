@@ -11,16 +11,6 @@ struct TicketLine {
   double      lineTotal;
 };
 
-// Struct plano que coincide con el JSON
-struct ProductDTO {
-  std::string id;
-  std::string name;
-  double      price;
-  int         stock;
-  std::string type;
-  std::string expirationDate;
-};
-
 class Store {
 public:
   bool LoadInventory(const std::string& filePath);
@@ -29,6 +19,8 @@ public:
   void AddProductInteractive();
   void SaveTicket(const std::vector<TicketLine>& lines,
     double total) const;
+  void SaveInventory(const std::string& filePath) const;
+
 
 private:
   std::vector<std::unique_ptr<Product>> products_;
