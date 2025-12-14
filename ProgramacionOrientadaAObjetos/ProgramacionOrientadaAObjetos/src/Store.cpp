@@ -114,6 +114,7 @@ void Store::MakeSale() {
   if (!lines.empty()) {
     std::cout << "\nTOTAL VENTA: $" << total << "\n";
     SaveTicket(lines, total);
+    SaveInventory("inventory.json");
   }
   else {
     std::cout << "No se registró ningún producto.\n";
@@ -133,8 +134,11 @@ void Store::AddProductInteractive() {
     return;
   }
 
-  std::cout << "Nombre (una palabra para simplificar): ";
-  std::cin >> name;
+  // LIMPIA el salto de línea que deja std::cin >>
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+  std::cout << "Nombre del producto (puede contener espacios): ";
+  std::getline(std::cin, name); // <-- lee nombre completo
 
   std::cout << "Precio: ";
   std::cin >> price;
