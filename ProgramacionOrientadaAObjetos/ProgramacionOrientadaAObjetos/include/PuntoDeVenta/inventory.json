@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "expirationDate": "",
+      "id": "A001",
+      "name": "Coca Cola 600ml",
+      "price": 18.5,
+      "stock": 18,
+      "type": "non_perishable"
+    },
+    {
+      "expirationDate": "2026-01-10",
+      "id": "B010",
+      "name": "Sandwich Jamon",
+      "price": 32.0,
+      "stock": 10,
+      "type": "perishable"
+    },
+    {
+      "expirationDate": "2026-04-17",
+      "id": "A003",
+      "name": "PapasRuffles75gr.",
+      "price": 35.0,
+      "stock": 45,
+      "type": "perishable"
+    },
+    {
+      "expirationDate": "2026-04-25",
+      "id": "A004",
+      "name": "Papas - Doritos Nachos 75g.",
+      "price": 35.0,
+      "stock": 40,
+      "type": "perishable"
+    }
+  ]
+}

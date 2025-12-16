@@ -140,6 +140,9 @@
     <ClInclude Include="include\User.h" />
     <ClInclude Include="include\Vector2D.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\inventory.json" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

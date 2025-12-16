@@ -32,6 +32,11 @@
 #include <ctime>
 #include <stdexcept>
 
+// Librerías de terceros
+#include "ThirdParties\json.hpp"
+using nlohmann::json;
+
+
 namespace EngineLog
 {
   // ------------------------------------------------------------
@@ -235,3 +240,25 @@ namespace EngineLog
 // Si quieres, puedes reemplazar tus usos de ERROR(...) por LOG_ERROR(...)
 // y solo mantener ERROR_OLD como alias temporal.
 // ---------------------------------------------------------------------------
+
+// Struct plano que coincide con el JSON
+struct ProductDTO {
+  std::string id;
+  std::string name;
+  double      price;
+  int         stock;
+  std::string type;
+  std::string expirationDate;
+
+  inline void to_json(nlohmann::json& j, const ProductDTO& dto)
+  {
+    j = nlohmann::json{
+        {"id", dto.id},
+        {"name", dto.name},
+        {"price", dto.price},
+        {"stock", dto.stock},
+        {"type", dto.type},
+        {"expirationDate", dto.expirationDate}
+    };
+  }
+};
