@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include "Prerequisites.h"
 #include "Product.h"
 
@@ -23,8 +24,6 @@ public:
 
 private:
 	Product* FindById(const std::string& id);
-	void SaveTicket(const std::vector<std::pair<Product, int>>& lines,
-		double total) const;
 private:
 	std::vector<std::unique_ptr<Product>> m_products;
 };
